@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title> Aprendendo Zend Framework </title>
+	</head>
+	<body>
+		<h1> Contact List </h1>
+		<table>
+			<tr>
+				<th> Name</th>
+				<th> Contact </th>
+				<th colspan = "2"> ACTION </th>
+			</tr>
+			<?php
+			foreach($this->Contact as $contact)
+				{
+					echo "<tr>";
+					echo "<td>" . $contact->name . "</td>";
+					echo "<td>" . $contact->number . "</td>";
+					echo "<td colspan='2'><a href='" . $this->url(array('controller' => 'contact', 'action'=>'edit', 'id'=>
+						$contact->id)) . "'>Edit</a>";
+					echo "<a href='" . $this->url(array('controller' => 'contact', 'action' => 'delete', 'id' => $contact->id)) . "' onclick = ' return confirm(\"Do you really 
+							want to delete this contact?\");'> Delete </a></td>"; 
+					echo "</tr>";
+					
+
+			    }
+		?>
+		</table>
+	</body>
+</html>

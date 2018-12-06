@@ -1,0 +1,13 @@
+<html>
+	<head> 
+		<title> Aprendendo Zem Framework</title>
+	</head>
+	<body>
+		<h1> Edit Contato </h1>
+		<form action='' method="POST">
+			<?php echo $this->contactForm->getElement('name')->setValue($this->contact->name);?>
+			<?php echo $this->contactForm->getElement('contact')->setValue($this->contact->number);?>
+			<?php echo $this->contactForm->getElement('submit')->setlabel('Update Contact');?>
+		</form>
+	</body>
+</html>
