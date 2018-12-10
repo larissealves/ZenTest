@@ -1,0 +1,61 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="public/css/style.css" rel="stylesheet">
+
+        <?php echo $this->headMeta() ?>
+
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/bootstrap.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery-ui.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery-ui-1.10.2.custom.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery.maskedinput.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9')) ?>
+        
+        <?php echo $this->headScript() ?>
+
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/jquery-ui.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/bootstrap.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/font-awesome.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/font-awesome-ie7.min.css', 'screen', 'IE 7') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/global.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/bootstrap-responsive.css', 'screen') ?>
+        
+        <?php echo $this->headLink() ?>
+    </head>
+    <body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="header">
+                    <div class="navbar navbar-inverse navbar-fixed-top">
+                        <div class="navbar-inner">
+                            <div class="container">
+                                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="brand">Formulario de Cadastro</a>
+                                <div class="nav-collapse collapse">
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <!-- <form>
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="Email Adress" class="form-control" placeholder="Digite seu Nome">
+                </div>
+                <div class="form-group">
+                    <label> Telefone</label>
+                    <input type="text" class="form-control" placeholder="Digite seu Telefone">
+                </div>
+                    <button type="submit" class="bnt bnt-info">Cadastrar</button="submit"></button>
+            </form>-->
+        </section>
+</main>    
