@@ -1,34 +1,44 @@
-<html>
-	<head>
-		<title> Aprendendo Zend Framework </title>
-	</head>
-	<body>
-		<table class="table table-bordered">
-  		<thead>
-		<h1> Contact List </h1>
+<div class="container"> 
+	<div clas="form - group">
+		<div class="col-md-6 offset-md-3">
+			<table class="table table-bordered">
+				<thead>
+					<h1> LISTA DE CONTATOS </h1>
+						<tr>
+							<th> NOME </th>
+							<th> CONTATO </th>
+							<th> EMAIL </th>
+							<th> ENDERECO </th>
+							<th colspan = "2"> ACTION </th>
+						</tr>
+				</thead>
+				<?php
+					foreach($this->Contact as $contact)
+					{
+						echo "<tr>";
+						echo "<td>" . $contact->name . "</td>";
+						echo "<td>" . $contact->number . "</td>";
+						echo "<td>" . $contact->email . "</td>";
+						echo "<td>" . $contact->endereco . "</td>";
+						echo "<td colspan='6'><a href='" . $this->url(array('controller' => 'contact', 'action'=>'edit', 'id'=>$contact->id)) . "'>Editar</a>";
+						echo "<th>";
+						echo "<a href='" . $this->url(array('controller' => 'contact', 'action' => 'delete', 'id' => $contact->id)) . "' onclick = ' return confirm(\"Excluir Contato?\");'> Delete </a>"; 
+						echo "</tr>";
+					}							
+				?>
+			</table>
+			<table class="table table-bordered">
+					<?php
+						foreach($this->Contact as $contact)
+						{
+							echo "<td colspan='6'><a href='" . $this->url(array('controller' => 'contact', 'action'=>'adicionar', 'id'=>$contact->id)) . "'>Adicionar Contato</a>";
+							echo "</td>";
+						}					
+					?>
+			</table>
+		</div>
+	</div>
+</div>
+				
 		
-			
-			<tr>
-				<th> Name</th>
-				<th> Contact </th>
-				<th colspan = "2"> ACTION </th>
-			</tr>
-		 </thead>
-			<?php
-			foreach($this->Contact as $contact)
-				{
-					echo "<tr>";
-					echo "<td>" . $contact->name . "</td>";
-					echo "<td>" . $contact->number . "</td>";
-					echo "<td colspan='2'><a href='" . $this->url(array('controller' => 'contact', 'action'=>'edit', 'id'=>
-						$contact->id)) . "'>Edit</a>";
-					echo "<a href='" . $this->url(array('controller' => 'contact', 'action' => 'delete', 'id' => $contact->id)) . "' onclick = ' return confirm(\"Do you really 
-							want to delete this contact?\");'> Delete </a></td>"; 
-					echo "</tr>";
-					
 
-			    }
-		?>
-		</table>
-	</body>
-</html>

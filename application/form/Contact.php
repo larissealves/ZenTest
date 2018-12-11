@@ -1,5 +1,6 @@
 <?php
 class Application_Form_Contact extends Zend_Form{
+
 	public function init()
 	{
 
@@ -7,45 +8,60 @@ class Application_Form_Contact extends Zend_Form{
         $this->setMethod('post');
         $this->setAttrib('class', 'form-horizontal');
 
-		//$this->addElement('text','name', array('label'=>'Digite seu nome: ','required'=>true));
+		
 		//$this->addElement('text','contact', array('label'=>'Telefone para Contato: ', 'required'=>true));
-		//$this->addElement('submit','submit', array('label'=> 'Adicionar Contato'));
-
+		
 		$name = new Zend_Form_Element_Text('name');
         $name -> clearDecorators();
-        $name->setAttrib('class', 'form-control');
         $name -> addDecorators($this->getBootstrapDecorator());
+        $name->setAttrib('class', 'form-control');
+        $name->setAttrib('type', 'text');
+        $name->setAttrib('placeholder', 'Nome de usuário');
         $name->setLabel("Nome:")->setRequired(true);
 
         $contact = new Zend_Form_Element_Text('contact');
         $contact -> clearDecorators();
-        $contact->setAttrib('class', 'form-control');
         $contact -> addDecorators($this->getBootstrapDecorator());
-        $contact->setLabel("contact:")->setRequired(true);
+        $contact->setAttrib('class', 'form-control');
+        $contact->setAttrib('placeholder', 'Contato');
+        $contact->setLabel("Contato:")->setRequired(true);
+ 
+
+        $endereco = new Zend_Form_Element_Text('endereco');
+        $endereco -> clearDecorators();
+        $endereco -> addDecorators($this->getBootstrapDecorator());
+        $endereco ->setAttrib('endereco', 'form-control');
+        $endereco->setAttrib('placeholder', 'Endereco');
+        $endereco  ->setLabel("Endereço:")->setRequired(true);
 
 
-        $submit = new Zend_Form_Element_Submit('relatorio');
-        $submit->setLabel('Pesquisar');
-        $submit->setAttrib('class', 'btn btn-primary');
-        $submit -> setAttrib('id', 'submitbutton');
-        $submit->setAttrib('style', 'float:right;');
+        $email = new Zend_Form_Element_Text('email');
+        $email -> clearDecorators();
+        $email -> addDecorators($this->getBootstrapDecorator());
+        $email -> setAttrib('class','form-control');
+        $email->setAttrib('placeholder', 'Email');
+        $email -> setLabel("Email:")->setRequired(true);
+
+        $submit = new Zend_Form_Element_Submit('submit');
+        $submit -> setAttrib('id', 'submit');
         $submit -> clearDecorators();
         $submit -> setDecorators(array('ViewHelper'));
+        $name->setAttrib('type', 'submit');
+        $submit->setAttrib('class', 'btn btn-default');
+        
 
-
-		$this->addElements(array($name, $contact, $submit));
-
+		$this->addElements(array($name, $contact, $email, $endereco, $submit));
+        //$this->addElement('submit','submit', array('label'=> 'Adicionar Contato'));
 	}
 
-	private function getBootstrapDecorator()
-    {
+	private function getBootstrapDecorator(){
         return array(
             'ViewHelper',
             'Errors',
             'Description',
-
+            
             array(
-                array('col' => 'HtmlTag'), array('tag' => 'div','class' => 'col-sm-6'),
+                array('col' => 'HtmlTag'), array('tag' => 'div','class' => 'col-sm-4'),
             ),
             array(
                 'Label', array('class' => 'control-label col-sm-2')
@@ -53,12 +69,9 @@ class Application_Form_Contact extends Zend_Form{
             array(
                 array('form-group' => 'HtmlTag'), array('tag' => 'div','class' => 'form-group')
             )
-
         );
-
     }
-
-
 }
+
 
 

@@ -1,12 +1,17 @@
-<form action=' ' method="Post">
-		<div class="row">
-			<div class="span4">
-			<?php echo $this->contactForm->getElement('name'); ?>
-			</div>	
-			
+<div class="container"> 
+	<form action=' ' method="Post" name="formulario" >
+		<div clas="form - group">
+			<div class="col-md-6 offset-md-3">
+				<?php echo $this->contactForm->getElement('name'); ?>
+				<?php echo $this->contactForm->getElement('contact'); ?>
+				<?php echo $this->contactForm->getElement('email'); ?>
+				<?php echo $this->contactForm->getElement('endereco'); ?>
+				<?php echo $this->contactForm->getElement('submit'); ?>
+			</div>
 		</div>
-			<?php echo $this->contactForm->getElement('contact'); ?>
-			<?php echo $this->contactForm->getElement('submit'); ?>
-</form>
+	</form>
+</div>
+				
+		
 
 
