@@ -3,14 +3,10 @@ class Application_Form_Contact extends Zend_Form{
 
 	public function init()
 	{
-
 	 	$this->setDecorators(array( 'FormElements', 'Form'));
         $this->setMethod('post');
         $this->setAttrib('class', 'form-horizontal');
 
-		
-		//$this->addElement('text','contact', array('label'=>'Telefone para Contato: ', 'required'=>true));
-		
 		$name = new Zend_Form_Element_Text('name');
         $name -> clearDecorators();
         $name -> addDecorators($this->getBootstrapDecorator());
@@ -26,14 +22,12 @@ class Application_Form_Contact extends Zend_Form{
         $contact->setAttrib('placeholder', 'Contato');
         $contact->setLabel("Contato:")->setRequired(true);
  
-
         $endereco = new Zend_Form_Element_Text('endereco');
         $endereco -> clearDecorators();
         $endereco -> addDecorators($this->getBootstrapDecorator());
         $endereco ->setAttrib('endereco', 'form-control');
         $endereco->setAttrib('placeholder', 'Endereco');
         $endereco  ->setLabel("Endereço:")->setRequired(true);
-
 
         $email = new Zend_Form_Element_Text('email');
         $email -> clearDecorators();
@@ -49,9 +43,7 @@ class Application_Form_Contact extends Zend_Form{
         $name->setAttrib('type', 'submit');
         $submit->setAttrib('class', 'btn btn-default');
         
-
 		$this->addElements(array($name, $contact, $email, $endereco, $submit));
-        //$this->addElement('submit','submit', array('label'=> 'Adicionar Contato'));
 	}
 
 	private function getBootstrapDecorator(){

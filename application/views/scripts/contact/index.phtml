@@ -24,17 +24,9 @@
 						echo "<th>";
 						echo "<a href='" . $this->url(array('controller' => 'contact', 'action' => 'delete', 'id' => $contact->id)) . "' onclick = ' return confirm(\"Excluir Contato?\");'> Delete </a>"; 
 						echo "</tr>";
-					}							
+					}
+					echo "<a href='" . $this->url(array('controller' => 'contact', 'action'=>'adicionar')) . "'>Adicionar Contato</a>";							
 				?>
-			</table>
-			<table class="table table-bordered">
-					<?php
-						foreach($this->Contact as $contact)
-						{
-							echo "<td colspan='6'><a href='" . $this->url(array('controller' => 'contact', 'action'=>'adicionar', 'id'=>$contact->id)) . "'>Adicionar Contato</a>";
-							echo "</td>";
-						}					
-					?>
 			</table>
 		</div>
 	</div>

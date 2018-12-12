@@ -2,13 +2,16 @@
 	<form action=' ' method="Post" name="formulario" >
 		<div clas="form - group">
 			<div class="col-md-6 offset-md-3">
-				<?php echo $this->contactForm->getElement('name')->setValue($this->contact->name);?>
-				<?php echo $this->contactForm->getElement('contact')->setValue($this->contact->number);?>
-				<?php echo $this->contactForm->getElement('email')->setValue($this->contact->email);?>
-				<?php echo $this->contactForm->getElement('endereco')->setValue($this->contact->endereco);?>
-				<?php echo $this->contactForm->getElement('submit')->setlabel('Update Contact');?>
+				<?php echo $this->contactForm->getElement('name'); ?>
+				<?php echo $this->contactForm->getElement('contact'); ?>
+				<?php echo $this->contactForm->getElement('email'); ?>
+				<?php echo $this->contactForm->getElement('endereco'); ?>
+				<?php echo $this->contactForm->getElement('submit'); ?>
 			</div>
 		</div>
 	</form>
 </div>
-	
+				
+		
+
+
